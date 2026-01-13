@@ -1,0 +1,105 @@
+<div class="page">
+    <header class="topbar">
+        <div class="brand">
+            <img class="logo" src="assets/brand/kredimizik.png" alt="Kredi Mizik" />
+            <div class="brand-text">
+                <div class="name">Kredi Mizik</div>
+                <div class="tagline">Music • Broadcasts • Culture</div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#notify">Notify</a>
+            <a href="#social">Social</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="hero">
+            <div class="hero-left">
+                <div class="pill">🎧 New release incoming</div>
+                <h1>Coming Soon</h1>
+                <p class="subtitle">
+                    A new song experience is on the way — built with love for Haitian music and the community.
+                </p>
+
+                <div class="countdown" aria-label="countdown timer">
+                    <div class="box">
+                        <div class="num">{{ countdown.days }}</div>
+                        <div class="lbl">Days</div>
+                    </div>
+                    <div class="box">
+                        <div class="num">{{ countdown.hours }}</div>
+                        <div class="lbl">Hours</div>
+                    </div>
+                    <div class="box">
+                        <div class="num">{{ countdown.minutes }}</div>
+                        <div class="lbl">Minutes</div>
+                    </div>
+                    <div class="box">
+                        <div class="num">{{ countdown.seconds }}</div>
+                        <div class="lbl">Seconds</div>
+                    </div>
+                </div>
+
+                <div id="notify" class="notify">
+                    <h2>Get notified when it drops</h2>
+                    <p>Leave your email and I’ll send a quick update on release day.</p>
+
+                    <div class="form">
+                        <input type="email" placeholder="your@email.com" [(ngModel)]="email" (keyup.enter)="notifyMe()"
+                            aria-label="email" />
+                        <button (click)="notifyMe()">Notify me</button>
+                    </div>
+
+                    <div class="msg ok" *ngIf="sent">✅ You’re on the list!</div>
+                    <div class="msg err" *ngIf="error">⚠️ {{ error }}</div>
+                    <div class="small" *ngIf="savedEmailsCount > 0">
+                        Local signups saved on this device: <strong>{{ savedEmailsCount }}</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="card">
+                    <div class="card-top">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                    <!-- Optional: show your mockup image (2nd file) -->
+                    <img class="mockup" src="assets/brand/mockup.png" alt="Kredi Mizik preview" />
+
+                    <div class="card-bottom" id="about">
+                        <h3>What’s coming?</h3>
+                        <ul>
+                            <li>New song release + a fresh page for updates</li>
+                            <li>Broadcast highlights and artist promotions</li>
+                            <li>Clean, fast experience on mobile & desktop</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="social" class="social">
+            <h2>Follow Kredi Mizik</h2>
+            <p>Stay connected — more announcements are coming.</p>
+
+            <div class="links">
+                <!-- Replace # with your real links -->
+                <a class="link" href="#" target="_blank" rel="noopener">YouTube</a>
+                <a class="link" href="#" target="_blank" rel="noopener">Facebook</a>
+                <a class="link" href="#" target="_blank" rel="noopener">Instagram</a>
+                <a class="link" href="#" target="_blank" rel="noopener">TikTok</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>© {{ currentYear }} Kredi Mizik</div>
+        <div class="foot-note">Built with Angular • Hosted on AWS</div>
+    </footer>
+</div>
