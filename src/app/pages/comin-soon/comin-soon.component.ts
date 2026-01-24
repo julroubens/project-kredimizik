@@ -13,7 +13,7 @@ type Countdown = { days: number; hours: number; minutes: number; seconds: number
 })
 export class CominSoonComponent implements OnInit, OnDestroy {
 
-  releaseDate = new Date('2026-02-01T18:00:00');
+  releaseDate = new Date('2026-07-01T18:00:00');
 
   countdown: Countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
   private timerId: ReturnType<typeof setInterval> | null = null;
